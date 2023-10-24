@@ -473,8 +473,8 @@ var reef = (function (exports) {
 			// Stop diffing if element should be ignored
 			if ('hasAttribute' in node && node.hasAttribute('reef-ignore')) return;
 
-			// If attributes are different, update them
-			diffAttributes(node, existingNodes[index], events);
+			// If attributes should not be kept and they are different, update them
+			if (!('hasAttribute' in node) || !node.hasAttribute('reef-keep')) diffAttributes(node, existingNodes[index], events);
 
 			// Stop diffing if a native web component
 			if (node.nodeName.includes('-')) return;
