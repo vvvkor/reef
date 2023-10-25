@@ -74,6 +74,7 @@ function createExport (file) {
 	});
 }
 
+fs.copyFileSync('./dist/reef.js', './docs/reef.js')
 fs.copyFileSync('./dist/reef.min.js', './docs/reef.min.js')
 
 export default createExport();
