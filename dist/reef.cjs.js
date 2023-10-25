@@ -475,7 +475,7 @@ function diff (template, existing, events) {
 		if ('hasAttribute' in node && node.hasAttribute('reef-ignore')) return;
 
 		// If attributes should not be kept and they are different, update them
-		if (!('hasAttribute' in node) || !node.hasAttribute('reef-keep')) diffAttributes(node, existingNodes[index], events);
+		if (!('hasAttribute' in node && node.hasAttribute('reef-keep'))) diffAttributes(node, existingNodes[index], events);
 
 		// Stop diffing if a native web component
 		if (node.nodeName.includes('-')) return;
