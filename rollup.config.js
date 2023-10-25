@@ -1,6 +1,7 @@
 // Plugins
 import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
+const fs = require('fs') 
 
 
 // Configs
@@ -73,5 +74,6 @@ function createExport (file) {
 	});
 }
 
+fs.copyFileSync('./dist/reef.min.js', './docs/reef.min.js')
 
 export default createExport();
